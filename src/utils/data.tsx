@@ -61,4 +61,44 @@ export const projects: ProjectsI[] = [
         repoUrl: "https://github.com/BradyBassett/Portfolio-Website--OLD-",
         webUrl: "https://bradybassett.me/",
     },
+    {
+        title: "Portfolio Website",
+        description:
+            "A personal website portfolio I designed to host all of my personal projects.",
+        technologies: ["HTML", "CSS", "JavaScript", "jQuery"],
+        repoUrl: "https://github.com/BradyBassett/Portfolio-Website--OLD-",
+        webUrl: "https://bradybassett.me/",
+    },
+    {
+        title: "Portfolio Website",
+        description:
+            "A personal website portfolio I designed to host all of my personal projects.",
+        technologies: ["HTML", "CSS", "JavaScript", "jQuery"],
+        repoUrl: "https://github.com/BradyBassett/Portfolio-Website--OLD-",
+        webUrl: "https://bradybassett.me/",
+    },
+    {
+        title: "Portfolio Website",
+        description:
+            "A personal website portfolio I designed to host all of my personal projects.",
+        technologies: ["HTML", "CSS", "JavaScript", "jQuery"],
+        repoUrl: "https://github.com/BradyBassett/Portfolio-Website--OLD-",
+        webUrl: "https://bradybassett.me/",
+    },
+    {
+        title: "Portfolio Website",
+        description:
+            "A personal website portfolio I designed to host all of my personal projects.",
+        technologies: ["HTML", "CSS", "JavaScript", "jQuery"],
+        repoUrl: "https://github.com/BradyBassett/Portfolio-Website--OLD-",
+        webUrl: "https://bradybassett.me/",
+    },
+    {
+        title: "Portfolio Website",
+        description:
+            "A personal website portfolio I designed to host all of my personal projects.",
+        technologies: ["HTML", "CSS", "JavaScript", "jQuery"],
+        repoUrl: "https://github.com/BradyBassett/Portfolio-Website--OLD-",
+        webUrl: "https://bradybassett.me/",
+    },
 ];

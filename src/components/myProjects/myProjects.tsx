@@ -1,13 +1,21 @@
 import React from "react";
+import { projects } from "../../utils/data";
+import BoxButton from "../boxButton";
+import Project from "./project";
 
 const MyProjects: React.FC<{ index: number }> = ({ index }) => {
     return (
-        <article className="flex justify-center my-20 md:my-36 lg:my-52">
-            <span className="flex text-2xl lg:text-3xl 2xl:text-4xl">
+        <article className="my-20 md:my-36 lg:my-52">
+            <span className="flex justify-center text-2xl lg:text-3xl 2xl:text-4xl">
                 <h1 className="pr-1 text-green-400">[{index}]</h1>
                 <h1 className="text-gray-300">My Projects</h1>
             </span>
-            <ul>{}</ul>
+            <ul className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 grid-rows-auto gap-5 mt-20 mx-6">
+                {projects.map((project) => {
+                    return <Project projectData={project}/>
+                })}
+            </ul>
+            <BoxButton className="mt-20 md:my-36 lg:my-52" text="Contact Me" goTo="/" scroll={true} />
         </article>
     );
 };
