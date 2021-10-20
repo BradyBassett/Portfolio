@@ -1,7 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 import Star from "./star";
-import { QuadTree, Rectangle, Circle, Point } from "./quadtree";
 import { getRandomBias } from "../../utils/utils";
 // import { createTextSpanFromBounds } from "typescript";
 
@@ -33,12 +32,20 @@ const Canvas: React.FC<{ className: string }> = ({ className }) => {
                     window.innerHeight / 2,
                     1
                 );
-                let velocityVariation = getRandomBias(0.001, 0.9999, 0.001, 0.75);
+                let velocityVariation = getRandomBias(
+                    0.001,
+                    0.9999,
+                    0.001,
+                    0.75
+                );
                 let velocityX = getRandomBias(0.01, 0.1, 0.05, 1);
                 let velocityY = getRandomBias(0.01, 0.1, 0.05, 1);
                 if (velocityVariation > 0.25 && velocityVariation < 0.5) {
                     velocityX *= -1;
-                } else if (velocityVariation > 0.25 && velocityVariation < 0.5) {
+                } else if (
+                    velocityVariation > 0.25 &&
+                    velocityVariation < 0.5
+                ) {
                     velocityY *= -1;
                 } else {
                     velocityX *= -1;
@@ -46,42 +53,21 @@ const Canvas: React.FC<{ className: string }> = ({ className }) => {
                 }
                 let alpha = getRandomBias(0.1, 0.5, 0.3, 1);
 
-                starsArray.push(new Star(x, y, velocityX, velocityY, radius, alpha));
+                starsArray.push(
+                    new Star(x, y, velocityX, velocityY, radius, alpha)
+                );
             }
         };
 
         const render = () => {
             animationFrameID = window.requestAnimationFrame(render);
             ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-
             /* TODO
              * render a specified amount of stars that are place in set configurations with lines connecting each star
              * cause each star to have slightly varying velocities
              */
-
-            // const boundary = new Rectangle(0, 0, ctx.canvas.width, ctx.canvas.height);
-            // const quadTree = new QuadTree(boundary, 15);
-
             for (let i = 0; i < starsArray.length; i++) {
                 starsArray[i].update(ctx);
-                //     let point = new Point(starsArray[i].x, starsArray[i].y, starsArray[i]);
-                //     quadTree.insert(point);
-                //     if (starsArray[i].constellationFlag === true) {
-                //         let circle = new Circle(starsArray[i].x, starsArray[i].y, 75);
-                //         let points = quadTree.query(circle);
-                //         for (let point of points) {
-                //             if (point.userData.constellationFlag === true) {
-                //                 let alpha = 0.5; //TODO decrease alpha as stars drift apart
-                //                 ctx.lineWidth = 1;
-                //                 ctx.shadowBlur = 5;
-                //                 ctx.strokeStyle = "rgba(254, 255, 224, " + alpha + ")";
-                //                 ctx.moveTo(starsArray[i].x, starsArray[i].y);
-                //                 ctx.lineTo(point.userData.x, point.userData.y);
-                //                 ctx.stroke();
-                //                 // FIXME fix lines inheriting blur / flickering / and keeping line after relocating
-                //             }
-                //         }
-                //     }
             }
         };
         initStars();
