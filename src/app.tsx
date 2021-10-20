@@ -3,7 +3,8 @@ import Home from "./components/home/home";
 import Footer from "./components/footer";
 import AboutMe from "./components/aboutMe/aboutMe";
 import MyProjects from "./components/myProjects/myProjects";
-import ContactMe from "./components/contactMe/contactMe";
+import ContactMe from "./components/contactMe";
+import SideElement from "./components/sideElement";
 
 const App: React.FC = () => {
     let index = 0;
@@ -11,6 +12,8 @@ const App: React.FC = () => {
     return (
         <>
             <Navbar />
+            <SideElement position="left" />
+            <SideElement position="right" />
             <main>
                 <Home />
                 <div className="bg-wave-1 w-full aspect-w-4 aspect-h-1 bg-no-repeat bg-cover bg-center"></div>
