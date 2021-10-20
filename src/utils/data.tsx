@@ -1,5 +1,10 @@
-import React from "react";
-import { FaGithub, FaLinkedin, FaTwitter, FaInstagram, FaFacebook } from "react-icons/fa";
+import {
+    FaGithub,
+    FaLinkedin,
+    FaTwitter,
+    FaInstagram,
+    FaFacebook,
+} from "react-icons/fa";
 import ProjectsI from "../interfaces/projectsI";
 
 export const links: { url: string; text: string }[] = [
@@ -56,48 +61,44 @@ export const projects: ProjectsI[] = [
     {
         title: "Portfolio Website",
         description:
-            "A personal website portfolio I designed to host all of my personal projects.",
-        technologies: ["HTML", "CSS", "JavaScript", "jQuery"],
-        repoUrl: "https://github.com/BradyBassett/Portfolio-Website--OLD-",
+            "A personal website portfolio I designed using React, TypeScript and tailwindcss.",
+        technologies: ["React", "Tailwind CSS", "TypeScript"],
+        repoUrl: "https://github.com/BradyBassett/Portfolio",
         webUrl: "https://bradybassett.me/",
     },
     {
-        title: "Portfolio Website",
+        title: "Inventory System",
         description:
-            "A personal website portfolio I designed to host all of my personal projects.",
-        technologies: ["HTML", "CSS", "JavaScript", "jQuery"],
-        repoUrl: "https://github.com/BradyBassett/Portfolio-Website--OLD-",
-        webUrl: "https://bradybassett.me/",
+            "A school project where I was tasked with creating a simple GUI inventory system for a company in a given scenario.",
+        technologies: ["Java", "JavaFX", "Scene Builder"],
+        repoUrl: "https://github.com/BradyBassett/InventorySystem",
     },
     {
-        title: "Portfolio Website",
+        title: "Class Roster",
         description:
-            "A personal website portfolio I designed to host all of my personal projects.",
-        technologies: ["HTML", "CSS", "JavaScript", "jQuery"],
-        repoUrl: "https://github.com/BradyBassett/Portfolio-Website--OLD-",
-        webUrl: "https://bradybassett.me/",
+            "A school project where I was tasked with creating a command-line class roster.",
+        technologies: ["C++"],
+        repoUrl: "https://github.com/BradyBassett/ClassRoster",
     },
     {
-        title: "Portfolio Website",
+        title: "Simple ATM Application",
         description:
-            "A personal website portfolio I designed to host all of my personal projects.",
-        technologies: ["HTML", "CSS", "JavaScript", "jQuery"],
-        repoUrl: "https://github.com/BradyBassett/Portfolio-Website--OLD-",
-        webUrl: "https://bradybassett.me/",
+            "This is a simple command-line ATM application I created in order to get an understanding of object-oriented design.",
+        technologies: ["Python"],
+        repoUrl: "https://github.com/BradyBassett/Simple-ATM",
     },
     {
-        title: "Portfolio Website",
+        title: "Laser Pointer",
         description:
-            "A personal website portfolio I designed to host all of my personal projects.",
-        technologies: ["HTML", "CSS", "JavaScript", "jQuery"],
-        repoUrl: "https://github.com/BradyBassett/Portfolio-Website--OLD-",
-        webUrl: "https://bradybassett.me/",
+            "A simple laser pointer controller arduino breadboard project that I created.",
+        technologies: ["Python", "Arduino", "Processing.py"],
+        repoUrl: "https://github.com/BradyBassett/Laser-Pointer",
     },
     {
-        title: "Portfolio Website",
+        title: "A Year Worth Remembering",
         description:
-            "A personal website portfolio I designed to host all of my personal projects.",
-        technologies: ["HTML", "CSS", "JavaScript", "jQuery"],
+            "This project is a website I designed to host my Phi Theta Kappa chapters end of the year project",
+        technologies: ["HTML", "CSS", "JavaScript"],
         repoUrl: "https://github.com/BradyBassett/Portfolio-Website--OLD-",
         webUrl: "https://bradybassett.me/",
     },
