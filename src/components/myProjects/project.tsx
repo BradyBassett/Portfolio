@@ -10,12 +10,12 @@ const Project: React.FC<{ projectData: ProjectsI }> = ({ projectData }) => {
         <li className="relative h-72 rounded-md bg-gray-750 px-5 py-5 shadow-lg hover:transform hover:-translate-y-2 hover:shadow-2xl transition-all ease-linear">
             <div className="absolute flex right-0 mr-5 text-2xl text-gray-400">
                 {webUrl && (
-                    <a href={webUrl}>
-                        <FiExternalLink className="hover:text-green-400 hover:transform hover:-translate-y-1 transition-all" />
+                    <a href={webUrl} target="_blank" rel="noopener noreferrer">
+                        <FiExternalLink className="hover:text-green-400 hover:animate-bounce" />
                     </a>
                 )}
-                <a href={repoUrl}>
-                    <FaGithub className="ml-2 hover:text-green-400 hover:transform hover:-translate-y-1 transition-all" />
+                <a href={repoUrl} target="_blank" rel="noopener noreferrer">
+                    <FaGithub className="ml-2 hover:text-green-400 hover:animate-bounce" />
                 </a>
             </div>
             <div className="mt-12">
