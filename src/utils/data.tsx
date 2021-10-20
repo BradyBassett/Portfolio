@@ -7,17 +7,17 @@ import {
 } from "react-icons/fa";
 import ProjectsI from "../interfaces/projectsI";
 
-export const links: { url: string; text: string }[] = [
+export const links: { id: string; text: string }[] = [
     {
-        url: "/",
+        id: "aboutMe",
         text: "About Me",
     },
     {
-        url: "/",
+        id: "myProjects",
         text: "My Projects",
     },
     {
-        url: "/",
+        id: "contactMe",
         text: "Contact Me",
     },
 ];
