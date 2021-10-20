@@ -123,6 +123,11 @@ module.exports = {
       zIndex: {
       '-1': '-1',
       },
+      colors: {
+        gray: {
+          750: '#273547'
+        },
+      },
     },
   },
   variants: {

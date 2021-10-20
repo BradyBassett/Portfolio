@@ -2,7 +2,6 @@ import React, { useRef, useEffect } from "react";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 import Star from "./star";
 import { getRandomBias } from "../../utils/utils";
-// import { createTextSpanFromBounds } from "typescript";
 
 const Canvas: React.FC<{ className: string }> = ({ className }) => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
