@@ -140,6 +140,7 @@ module.exports = {
       animation: ['hover'],
       transform: ['hover'],
       grayscale: ['hover'],
+      backgroundColor: ['hover', 'active'],
     },
   },
   plugins: [
