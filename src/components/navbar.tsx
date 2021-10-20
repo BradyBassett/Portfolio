@@ -3,6 +3,7 @@ import { links } from "../utils/data";
 import useWindowDimensions from "../hooks/useWindowDimensions";
 import resume from "../utils/Brady-Bassett-Resume.pdf";
 import logo from "../utils/images/Portfolio Logo.png";
+import { Link } from "react-scroll";
 
 const Navbar: React.FC = () => {
     const { width } = useWindowDimensions();
@@ -60,7 +61,8 @@ const Navbar: React.FC = () => {
         } else {
             document.body.classList.remove("overflow-hidden");
             setBurgerClasses("h-20");
-            window.pageYOffset === 0 && setTransparent("bg-opacity-0 shadow-none");
+            window.pageYOffset === 0 &&
+                setTransparent("bg-opacity-0 shadow-none");
         }
     }, [burgerClicked]);
 
@@ -70,13 +72,20 @@ const Navbar: React.FC = () => {
             ${burgerActive ? "duration-1000" : "duration-700"}`}
         >
             {/* LOGO */}
-            <a href="./">
+            <Link
+                activeClass="active"
+                to="home"
+                spy={true}
+                smooth={true}
+                offset={0}
+                duration={1000}
+            >
                 <img
                     src={logo}
                     alt="Brady Bassett Logo"
-                    className="absolute h-14 mt-3 ml-3 z-20 md:ml-4 lg:ml-6 hover:h-16 hover:mt-2 transition-all ease-out duration-300"
+                    className="absolute h-14 mt-3 ml-3 z-20 md:ml-4 lg:ml-6 hover:h-16 hover:mt-2 transition-all ease-out duration-300 cursor-pointer"
                 />
-            </a>
+            </Link>
             {/* BURGER */}
             <button
                 onClick={() => setBurgerClicked(!burgerClicked)}
@@ -96,7 +105,9 @@ const Navbar: React.FC = () => {
                 ></div>
                 <div
                     className={`h-1 bg-gray-400 m-1 transition-all ease-in duration-100 ${
-                        burgerClicked ? "w-9 transform -rotate-45 translate-x-1" : "w-7"
+                        burgerClicked
+                            ? "w-9 transform -rotate-45 translate-x-1"
+                            : "w-7"
                     }`}
                 ></div>
             </button>
@@ -107,21 +118,33 @@ const Navbar: React.FC = () => {
                         ? "transition-all linear duration-1500"
                         : "transition-none"
                 }
-            ${burgerClicked ? "-translate-y-1/2 " : "-translate-y-full opacity-0"}
+            ${
+                burgerClicked
+                    ? "-translate-y-1/2 "
+                    : "-translate-y-full opacity-0"
+            }
                 md:opacity-100 md:translate-y-0 md:translate-x-0 md:top-0 md:left-0 md:w-full`}
             >
                 <ul className="md:flex md:w-2/3 xl:w-1/2 2xl:w-1/3 md:justify-around md:mx-auto md:py-6">
                     {links.map((link, index) => {
-                        const { url, text } = link;
+                        const { id, text } = link;
                         return (
-                            <li key={index} className="">
-                                <a
-                                    href={url}
-                                    className="text-gray-400 flex text-xl py-16 md:py-0 hover:text-green-400 hover:text-2xl transition-all ease-out duration-200"
+                            <li key={index}>
+                                <Link
+                                    activeClass="active"
+                                    to={id}
+                                    spy={true}
+                                    smooth={true}
+                                    offset={0}
+                                    duration={1000}
                                 >
-                                    <p className="text-green-400 pr-2">[{index}]</p>
-                                    <p>{text}</p>
-                                </a>
+                                    <div className="text-gray-400 flex text-xl py-16 md:py-0 hover:text-green-400 hover:text-2xl transition-all ease-out duration-200 cursor-pointer">
+                                        <p className="text-green-400 pr-2">
+                                            [{index}]
+                                        </p>
+                                        <p>{text}</p>
+                                    </div>
+                                </Link>
                             </li>
                         );
                     })}

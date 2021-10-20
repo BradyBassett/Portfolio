@@ -4,7 +4,7 @@ import Canvas from "./canvas";
 
 const Home: React.FC = () => {
     return (
-        <article className="relative h-screen">
+        <article className="relative h-screen" id="home">
             <section className="absolute top-1/4 mx-10 sm:mx-24 md:mx-20 lg:mx-40 xl:mx-72 2xl:mx-80">
                 <h1 className="relative text-green-500 font-bold text-4xl sm:text-5xl md:text-7xl lg:text-8xl pb-2 animate-shine">
                     Brady Bassett
@@ -13,9 +13,9 @@ const Home: React.FC = () => {
                     Software Engineer
                 </h2>
                 <p className="text-gray-400 break-words sm:mr-3/16 lg:mr-5/16 xl:text-lg 2xl:mr-7/16">
-                    Dallas-Fort Worth based computer science student. Currently pursuing a
-                    Bachelor of Science Computer Science degree through Western Governors
-                    University.
+                    Dallas-Fort Worth based computer science student. Currently
+                    pursuing a Bachelor of Science Computer Science degree
+                    through Western Governors University.
                 </p>
             </section>
             <section>

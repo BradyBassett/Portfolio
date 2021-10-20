@@ -4,10 +4,12 @@ import headShot from "../../utils/images/Headshot.jpeg";
 import BoxButton from "../boxButton";
 import TechnologyList from "./technologyList";
 
-
 const AboutMe: React.FC<{ index: number }> = ({ index }) => {
     return (
-        <article className="mx-6 my-20 md:mx-16 md:my-36 lg:mx-32 lg:my-52 xl:mx-52 2xl:mx-80">
+        <article
+            className="mx-6 my-20 md:mx-16 md:my-36 lg:mx-32 lg:my-52 xl:mx-52 2xl:mx-80"
+            id="aboutMe"
+        >
             <span className="flex text-2xl lg:text-3xl 2xl:text-4xl">
                 <h1 className="pr-1 text-green-400">[{index}]</h1>
                 <h1 className="text-gray-300">About Me</h1>
@@ -23,7 +25,12 @@ const AboutMe: React.FC<{ index: number }> = ({ index }) => {
                     alt="Personal Headshot"
                 />
             </div>
-            <BoxButton className="mt-20 md:mt-36 lg:my-48" text="See my Projects" goTo="/" scroll={true} />
+            <BoxButton
+                className="mt-20 md:mt-36 lg:my-48"
+                text="See my Projects"
+                goTo="/"
+                scroll={true}
+            />
         </article>
     );
 };

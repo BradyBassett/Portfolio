@@ -5,7 +5,7 @@ import Project from "./project";
 
 const MyProjects: React.FC<{ index: number }> = ({ index }) => {
     return (
-        <article className="my-20 md:my-36 lg:my-52">
+        <article className="my-20 md:my-36 lg:my-52" id="myProjects">
             <span className="flex justify-center text-2xl lg:text-3xl 2xl:text-4xl">
                 <h1 className="pr-1 text-green-400">[{index}]</h1>
                 <h1 className="text-gray-300">My Projects</h1>
