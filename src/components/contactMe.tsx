@@ -77,7 +77,7 @@ const ContactMe: React.FC<{ index: number }> = ({ index }) => {
 
     return (
         <article
-            className="my-40 mx-4 sm:mx-12 lg:mx-32 xl:mx-48"
+            className="my-40 mx-4 sm:mx-12 lg:mx-3/16 xl:mx-1/5"
             id="contactMe"
         >
             <span className="flex justify-center text-2xl lg:text-3xl 2xl:text-4xl">
