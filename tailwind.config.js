@@ -129,6 +129,9 @@ module.exports = {
           750: '#273547'
         },
       },
+      blur: {
+        xs: '1px',
+      },
     },
   },
   variants: {
