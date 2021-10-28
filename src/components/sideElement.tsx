@@ -3,18 +3,34 @@ import { socialIcons } from "../utils/data";
 
 const SideElement: React.FC<{ position: string }> = ({ position }) => {
     return (
-        <div className="fixed z-10">
-            {position === "left" ? (
-                <ul>
+        <div className="hidden lg:block text-gray-350 text-lg xl:text-xl">
+            <div className="fixed flex-row left-11 bottom-0 z-10">
+                <ul className="pb-5">
                     {socialIcons.map((iconElement, index) => {
                         const { icon, url } = iconElement;
-                        return <li key={index}>{icon}</li>;
+                        return (
+                            <li className="pt-5" key={index}>
+                                <a
+                                    href={url}
+                                    className="hover:text-green-500 transition-all"
+                                >
+                                    {icon}
+                                </a>
+                            </li>
+                        );
                     })}
                 </ul>
-            ) : (
-                <h2>bradydbassett@gmail.com</h2>
-            )}
-            <hr className="w-px h-1/6 bg-gray-300" />
+                <div className="ml-2 w-px bg-gray-350 h-32"></div>
+            </div>
+            <div className="fixed right-10 bottom-32 pb-5 z-10">
+                <a
+                    href="mailto:bradydbassett@gmail.com"
+                    className="vertical-rl hover:text-green-500 transition-all"
+                >
+                    bradydbassett@gmail.com
+                </a>
+            </div>
+            <div className="fixed w-px bg-gray-350 right-14 bottom-0 h-32 z-10"></div>
         </div>
     );
 };
