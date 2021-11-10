@@ -77,18 +77,12 @@ const Canvas: React.FC<{ className: string }> = ({ className }) => {
         const render = () => {
             animationFrameID = window.requestAnimationFrame(render);
             ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-            /* TODO
-             * render a specified amount of stars that are place in set configurations with lines connecting each star
-             * cause each star to have slightly varying velocities
-             */
             for (let i = 0; i < starsArray.length; i++) {
                 starsArray[i].update(ctx);
             }
         };
         initStars();
-        starsArray[0].draw(ctx);
         render();
-
         return () => window.cancelAnimationFrame(animationFrameID);
     }, [width, height]);
 
