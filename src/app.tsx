@@ -12,8 +12,7 @@ const App: React.FC = () => {
     return (
         <>
             <Navbar />
-            <SideElement position="left" />
-            <SideElement position="right" />
+            <SideElement />
             <main>
                 <Home />
                 <div className="bg-wave-1 w-full aspect-w-4 aspect-h-1 bg-no-repeat bg-cover bg-center"></div>
