@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-400 overflow-x-hidden bg-gray-800;
+    @apply scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-transparent overflow-x-hidden bg-gray-800;
   }
 }
 
@@ -13,6 +13,10 @@
     writingmode: "vertical-rl";
     -webkit-writing-mode: vertical-lr;
     -ms-writing-mode: vertical-lr;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
   }
 }
 
