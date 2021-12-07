@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 import Star from "./star";
 import { getRandomBias } from "../../utils/utils";
@@ -8,6 +8,7 @@ const Canvas: React.FC<{ className: string }> = ({ className }) => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const starRef = useRef<HTMLImageElement>(null);
     const { width, height } = useWindowDimensions();
+    const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect(() => {
         const canvas = canvasRef.current!;
@@ -81,14 +82,22 @@ const Canvas: React.FC<{ className: string }> = ({ className }) => {
                 starsArray[i].update(ctx);
             }
         };
-        initStars();
+        if (isLoaded) {
+            initStars();
+        }
         render();
         return () => window.cancelAnimationFrame(animationFrameID);
-    }, [width, height]);
+    }, [width, height, isLoaded]);
 
     return (
         <>
-            <img src={star} alt="star" ref={starRef} className="hidden" />
+            <img
+                src={star}
+                alt="star"
+                ref={starRef}
+                onLoad={() => setIsLoaded(true)}
+                className="hidden"
+            />
             <canvas className={className} ref={canvasRef}></canvas>
         </>
     );
