@@ -28,7 +28,7 @@ const Home: React.FC = () => {
                 <div className="absolute top-0 h-14 w-full bg-gradient-to-b from-gray-800"></div>
                 <div className="absolute bottom-0 h-14 w-full bg-gradient-to-t from-gray-800"></div>
             </section>
-            <Canvas className="absolute top-0 left-0 -z-1" />
+            <Canvas className="absolute top-0 left-0 -z-1 filter blur-xs" />
         </article>
     );
 };
