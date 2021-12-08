@@ -26,12 +26,12 @@ export default class Star {
         this.changeAlpha = getRandomBias(0.0003, 0.0008, 0.001, 1);
     }
 
-    draw(ctx: CanvasRenderingContext2D) {
+    draw(ctx: CanvasRenderingContext2D): void {
         ctx.globalAlpha = this.alpha;
         ctx.drawImage(this.star, this.x, this.y, this.width, this.height);
     }
 
-    update(ctx: CanvasRenderingContext2D) {
+    update(ctx: CanvasRenderingContext2D): void {
         if (
             this.x - this.width > ctx.canvas.width ||
             this.x + this.width * this.scale < 0 ||

@@ -3,6 +3,7 @@ import useWindowDimensions from "../../hooks/useWindowDimensions";
 import Star from "./star";
 import { getRandomBias } from "../../utils/utils";
 import star from "../../utils/images/star.png";
+import Constellation from "./constellation";
 
 const Canvas: React.FC<{ className: string }> = ({ className }) => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -12,18 +13,19 @@ const Canvas: React.FC<{ className: string }> = ({ className }) => {
 
     useEffect(() => {
         const canvas = canvasRef.current!;
-        const star = starRef.current!;
-        const ctx = canvas.getContext("2d")!;
         canvas.width = width;
         canvas.height = height;
+        const star = starRef.current!;
+        const ctx = canvas.getContext("2d")!;
+        const starsArray: Star[] = [];
+        const constellationArray: Constellation[] = [];
+        const numberOfStars = Math.floor((canvas.height * canvas.width) / 2500);
+        const numberOfConstellations = 5;
         let animationFrameID: number;
-        let starsArray: Star[] = [];
-        // let numberOfStars = 1;
-        let numberOfStars = (canvas.height * canvas.width) / 2500;
 
         const initStars = (): void => {
             for (let i = 0; i < numberOfStars; i++) {
-                let scale = getRandomBias(0.01, 0.8, 0.3, 1);
+                let scale = getRandomBias(0.01, 0.6, 0.3, 1);
                 let width = Math.round(starRef.current!.width * scale);
                 let height = Math.round(starRef.current!.height * scale);
                 let velocityVariation = getRandomBias(
@@ -47,18 +49,17 @@ const Canvas: React.FC<{ className: string }> = ({ className }) => {
                 }
                 let x = getRandomBias(
                     0,
-                    window.innerWidth - 18,
-                    window.innerWidth / 2,
+                    canvas.width - 18,
+                    canvas.width / 2,
                     1
                 );
                 let y = getRandomBias(
                     0,
-                    window.innerHeight - 18,
-                    window.innerHeight / 2,
+                    canvas.height - 18,
+                    canvas.height / 2,
                     1
                 );
                 let alpha = getRandomBias(0.1, 0.5, 0.3, 1);
-
                 starsArray.push(
                     new Star(
                         x,
@@ -75,15 +76,60 @@ const Canvas: React.FC<{ className: string }> = ({ className }) => {
             }
         };
 
+        const newConstellation = (): Constellation => {
+            const numStarsContained = Math.ceil(getRandomBias(2, 5, 4, 1));
+            const x1 = getRandomBias(
+                0,
+                canvas.width - 300,
+                canvas.width / 2,
+                0.4
+            );
+            const x2 = x1 + 300;
+            const y1 = getRandomBias(
+                0,
+                canvas.height - 300,
+                canvas.height / 2,
+                0.4
+            );
+            const y2 = y1 + 300;
+
+            return new Constellation(numStarsContained, x1, x2, y1, y2);
+        };
+
+        const newConstellationStars = (parent: Constellation): void => {
+            for (let i = 0; i < parent.numberOfStars; i++) {
+                parent.starArray.push(parent.createNewStar(star));
+            }
+        };
+
+        const initConstellations = (): void => {
+            for (let i = 0; i < numberOfConstellations; i++) {
+                constellationArray.push(newConstellation());
+                newConstellationStars(constellationArray[i]);
+            }
+        };
+
         const render = () => {
             animationFrameID = window.requestAnimationFrame(render);
             ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
             for (let i = 0; i < starsArray.length; i++) {
                 starsArray[i].update(ctx);
             }
+            for (let i = 0; i < constellationArray.length; i++) {
+                if (constellationArray[i].numberOfStars === 0) {
+                    let replacement = newConstellation();
+                    newConstellationStars(replacement);
+                    constellationArray.splice(i, 1, replacement);
+                }
+                for (let j = 0; j < constellationArray[i].numberOfStars; j++) {
+                    constellationArray[i].starArray[j].update(ctx);
+                }
+                constellationArray[i].update(ctx);
+            }
         };
         if (isLoaded) {
             initStars();
+            initConstellations();
         }
         render();
         return () => window.cancelAnimationFrame(animationFrameID);
