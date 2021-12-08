@@ -71,7 +71,6 @@ const Navbar: React.FC = () => {
             className={`${toggleY}  ${transparent} ${burgerClasses} bg-gray-800 fixed z-10 w-full transition-all linear
             ${burgerActive ? "duration-1000" : "duration-700"}`}
         >
-            {/* LOGO */}
             <Link
                 activeClass="active"
                 to="home"
@@ -86,7 +85,6 @@ const Navbar: React.FC = () => {
                     className="absolute h-14 mt-3 ml-3 z-20 md:ml-4 lg:ml-6 hover:h-16 hover:mt-2 transition-all ease-out duration-300 cursor-pointer"
                 />
             </Link>
-            {/* BURGER */}
             <button
                 onClick={() => setBurgerClicked(!burgerClicked)}
                 className="absolute right-5 top-7 z-20 select-none md:hidden"
@@ -111,7 +109,6 @@ const Navbar: React.FC = () => {
                     }`}
                 ></div>
             </button>
-            {/* LINKS */}
             <div
                 className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 opac ${
                     burgerActive
@@ -149,7 +146,6 @@ const Navbar: React.FC = () => {
                         );
                     })}
                 </ul>
-                {/* Resume Button */}
                 <div className="py-16 flex justify-center md:py-0 md:absolute md:right-0 md:top-0 md:mr-6 xl:mr-8 md:mt-4 hover:mt-3 md:transition-all ease-out duration-200">
                     <a
                         href={resume}
