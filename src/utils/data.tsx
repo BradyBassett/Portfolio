@@ -99,7 +99,7 @@ export const projects: ProjectsI[] = [
         description:
             "This project is a website I designed to host my Phi Theta Kappa chapters end of the year project",
         technologies: ["HTML", "CSS", "JavaScript"],
-        repoUrl: "https://github.com/BradyBassett/Portfolio-Website--OLD-",
-        webUrl: "https://bradybassett.me/",
+        repoUrl: "https://github.com/BradyBassett/A-Year-Worth-Remembering",
+        webUrl: "https://ptkcollegeproject.github.io/a-year-worth-remembering/",
     },
 ];
