@@ -13,7 +13,13 @@ const SideElement: React.FC = () => {
                                 className="mt-5 hover:text-green-500 hover:transform hover:translate-x-1 transition-all"
                                 key={index}
                             >
-                                <a href={url}>{icon}</a>
+                                <a
+                                    href={url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    {icon}
+                                </a>
                             </li>
                         );
                     })}
@@ -24,6 +30,8 @@ const SideElement: React.FC = () => {
                 <a
                     href="mailto:bradydbassett@gmail.com"
                     className="vertical-rl hover:text-green-500 hover:animate-pulse transition-all"
+                    target="_blank"
+                    rel="noopener noreferrer"
                 >
                     bradydbassett@gmail.com
                 </a>
