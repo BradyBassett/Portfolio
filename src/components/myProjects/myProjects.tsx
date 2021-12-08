@@ -18,7 +18,7 @@ const MyProjects: React.FC<{ index: number }> = ({ index }) => {
             <BoxButton
                 className="mt-20 md:my-36 lg:my-52"
                 text="Contact Me"
-                goTo="/"
+                goTo="contactMe"
                 scroll={true}
             />
         </article>

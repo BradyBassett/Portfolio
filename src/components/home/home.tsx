@@ -5,7 +5,7 @@ import Canvas from "./canvas";
 const Home: React.FC = () => {
     return (
         <article className="relative h-screen" id="home">
-            <section className="absolute top-1/4 mx-10 sm:mx-24 md:mx-20 lg:mx-40 xl:mx-72 2xl:mx-80">
+            <section className="absolute top-1/4 mx-10 sm:mx-24 md:mx-20 lg:mx-40 xl:mx-72 2xl:mx-96">
                 <h1 className="relative text-green-500 font-bold text-4xl sm:text-5xl md:text-7xl lg:text-8xl pb-2 animate-shine">
                     Brady Bassett
                 </h1>
@@ -22,7 +22,7 @@ const Home: React.FC = () => {
                 <BoxButton
                     className="absolute left-0 right-0 bottom-1/10 mx-auto w-auto"
                     text="Learn More"
-                    goTo="/"
+                    goTo="aboutMe"
                     scroll={true}
                 />
                 <div className="absolute top-0 h-14 w-full bg-gradient-to-b from-gray-800"></div>

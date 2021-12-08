@@ -28,7 +28,7 @@ const AboutMe: React.FC<{ index: number }> = ({ index }) => {
             <BoxButton
                 className="mt-20 md:mt-36 lg:my-48"
                 text="See my Projects"
-                goTo="/"
+                goTo="myProjects"
                 scroll={true}
             />
         </article>
