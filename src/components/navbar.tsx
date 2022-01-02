@@ -78,6 +78,7 @@ const Navbar: React.FC = () => {
                 smooth={true}
                 offset={0}
                 duration={1000}
+                onClick={() => setBurgerClicked(false)}
             >
                 <img
                     src={logo}
@@ -132,8 +133,9 @@ const Navbar: React.FC = () => {
                                     to={id}
                                     spy={true}
                                     smooth={true}
-                                    offset={0}
+                                    offset={-125}
                                     duration={1000}
+                                    onClick={() => setBurgerClicked(false)}
                                 >
                                     <div className="text-gray-400 flex text-xl py-16 md:py-0 hover:text-green-400 hover:text-2xl transition-all ease-out duration-200 cursor-pointer">
                                         <p className="text-green-400 pr-2">
