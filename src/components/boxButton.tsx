@@ -18,7 +18,7 @@ const BoxButton: React.FC<BoxButtonIProps> = ({
                 to={goTo!}
                 spy={true}
                 smooth={true}
-                offset={0}
+                offset={-100}
                 duration={1000}
                 className="text-2xl md:text-3xl text-green-400 cursor-pointer"
                 onMouseOver={() => setIsHovering(true)}
