@@ -46,7 +46,7 @@ export const socialIcons: { icon: JSX.Element; url: string }[] = [
 ];
 
 export const aboutMeDescription: string =
-    "Hello! My name is Brady Bassett, I love working with all things computers related, whether that be designing websites, building computers, or programming. I have always been interested in computers to some extent, since I was young, but I became addicted in 2017 when I saved up enough to build my first computer, and it's been uphill since then. Nowadays I am enrolled at WGU's Bachelors of Computer Science, with aspirations of becoming a software engieer.";
+    "Hello! My name is Brady, I am a Dallas-Fort Worth based computer science student. Software Engineering is my passion, and I am always looking for the next new thing that I can create. I specialize in fullstack web development, though I am more than capable when it comes to desktop, or even mobile development. Please feel free to stay awhile, and contact me if you have any offers or just want to say hi!";
 
 export const technologies: string[] = [
     "ReactJS",
@@ -61,7 +61,7 @@ export const projects: ProjectsI[] = [
     {
         title: "Portfolio Website",
         description:
-            "A personal website portfolio I designed using React, TypeScript and tailwindcss.",
+            "This is what you are looking at right now! My goal with this website was to put myself on display, (not in a weird way), and to show all that I have to offer as a developer.",
         technologies: ["React", "Tailwind CSS", "TypeScript"],
         repoUrl: "https://github.com/BradyBassett/Portfolio",
         webUrl: "https://bradybassett.me/",
@@ -69,35 +69,35 @@ export const projects: ProjectsI[] = [
     {
         title: "Inventory System",
         description:
-            "A school project where I was tasked with creating a simple GUI inventory system for a company in a given scenario.",
+            "A school project where I was tasked with creating a simple GUI inventory system in a given scenario. I believe that this could certainly be scaled up, potentially including some sort of database functionality.",
         technologies: ["Java", "JavaFX", "Scene Builder"],
         repoUrl: "https://github.com/BradyBassett/InventorySystem",
     },
     {
         title: "Class Roster",
         description:
-            "A school project where I was tasked with creating a command-line class roster.",
+            "A school project where I was given the assignment creating a CLI class roster. I feel like this project really helped cement my understanding of both object-oriented design and memory management in C++.",
         technologies: ["C++"],
         repoUrl: "https://github.com/BradyBassett/ClassRoster",
     },
     {
         title: "Simple ATM Application",
         description:
-            "This is a simple command-line ATM application I created in order to get an understanding of object-oriented design.",
+            "This is a simple CLI ATM application. I wanted to use this project to teach myself the basics of object-oriented design, and though it's not perfect by any means, I certainly learned a lot from it.",
         technologies: ["Python"],
         repoUrl: "https://github.com/BradyBassett/Simple-ATM",
     },
     {
         title: "Laser Pointer",
         description:
-            "A simple laser pointer controller arduino breadboard project that I created.",
+            "A simple laser pointer controller arduino breadboard project that I created. I used this project as a way to get my feet wet in hardware development.",
         technologies: ["Python", "Arduino", "Processing.py"],
         repoUrl: "https://github.com/BradyBassett/Laser-Pointer",
     },
     {
         title: "A Year Worth Remembering",
         description:
-            "This project is a website I designed to host my Phi Theta Kappa chapters end of the year project",
+            "This project is a website I designed to host my Phi Theta Kappa chapter's end of the year project. This was my first ever attempt at creating a website from scratch. This project is responsible for teaching much of what would be my web development foundation.",
         technologies: ["HTML", "CSS", "JavaScript"],
         repoUrl: "https://github.com/BradyBassett/A-Year-Worth-Remembering",
         webUrl: "https://ptkcollegeproject.github.io/a-year-worth-remembering/",
