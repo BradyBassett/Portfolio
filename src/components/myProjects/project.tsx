@@ -18,7 +18,7 @@ const Project: React.FC<{ projectData: ProjectsI }> = ({ projectData }) => {
                     <FaGithub className="ml-2 hover:text-green-400 hover:animate-bounce" />
                 </a>
             </div>
-            <div className="mt-12">
+            <div className="mt-6">
                 <h2 className="text-gray-300 text-lg">{title}</h2>
                 <p className="text-gray-400 lg:mr-10">{description}</p>
                 <ul className="absolute flex bottom-5 text-xs text-green-600">
