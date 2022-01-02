@@ -20,7 +20,12 @@ const Canvas: React.FC<{ className: string }> = ({ className }) => {
         const starsArray: Star[] = [];
         const constellationArray: Constellation[] = [];
         const numberOfStars = Math.floor((canvas.height * canvas.width) / 2500);
-        const numberOfConstellations = 5;
+        let numberOfConstellations: 3 | 5;
+        if (canvas.width < 1024) {
+            numberOfConstellations = 3;
+        } else {
+            numberOfConstellations = 5;
+        }
         let animationFrameID: number;
 
         const initStars = (): void => {
@@ -70,7 +75,8 @@ const Canvas: React.FC<{ className: string }> = ({ className }) => {
                         width,
                         height,
                         alpha,
-                        star
+                        star,
+                        false
                     )
                 );
             }
