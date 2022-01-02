@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/Portfolio/static/css/main.11f262eb.chunk.css",
+    "main.js": "/Portfolio/static/js/main.20b472c0.chunk.js",
+    "main.js.map": "/Portfolio/static/js/main.20b472c0.chunk.js.map",
+    "runtime-main.js": "/Portfolio/static/js/runtime-main.16b219ff.js",
+    "runtime-main.js.map": "/Portfolio/static/js/runtime-main.16b219ff.js.map",
+    "static/js/2.cd61c091.chunk.js": "/Portfolio/static/js/2.cd61c091.chunk.js",
+    "static/js/2.cd61c091.chunk.js.map": "/Portfolio/static/js/2.cd61c091.chunk.js.map",
+    "index.html": "/Portfolio/index.html",
+    "static/css/main.11f262eb.chunk.css.map": "/Portfolio/static/css/main.11f262eb.chunk.css.map",
+    "static/js/2.cd61c091.chunk.js.LICENSE.txt": "/Portfolio/static/js/2.cd61c091.chunk.js.LICENSE.txt",
+    "static/media/Brady-Bassett-Resume.020ac89a.pdf": "/Portfolio/static/media/Brady-Bassett-Resume.020ac89a.pdf",
+    "static/media/Headshot.7d0e331d.jpeg": "/Portfolio/static/media/Headshot.7d0e331d.jpeg",
+    "static/media/index.css": "/Portfolio/static/media/wave-3.95e494c6.svg",
+    "static/media/Portfolio Logo.ec7e626a.png": "/Portfolio/static/media/Portfolio Logo.ec7e626a.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.16b219ff.js",
+    "static/js/2.cd61c091.chunk.js",
+    "static/css/main.11f262eb.chunk.css",
+    "static/js/main.20b472c0.chunk.js"
+  ]
+}
