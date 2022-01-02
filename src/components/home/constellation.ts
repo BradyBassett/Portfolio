@@ -46,30 +46,45 @@ export default class Constellation {
             width,
             height,
             alpha,
-            star
+            star,
+            true
         );
+    }
+
+    pathCreation(
+        ctx: CanvasRenderingContext2D,
+        index: number,
+        lineToIndex: number
+    ): void {
+        lineToIndex++;
+
+        if (lineToIndex !== this.numberOfStars) {
+            ctx.globalAlpha = Math.min(
+                this.starArray[index].alpha,
+                this.starArray[lineToIndex].alpha
+            );
+            ctx.beginPath();
+            ctx.moveTo(
+                this.starArray[index].x + this.starArray[index].width / 2,
+                this.starArray[index].y + this.starArray[index].height / 2
+            );
+            ctx.lineTo(
+                this.starArray[lineToIndex].x +
+                    this.starArray[lineToIndex].width / 2,
+                this.starArray[lineToIndex].y +
+                    this.starArray[lineToIndex].height / 2
+            );
+            ctx.strokeStyle = "rgba(254, 255, 224)";
+            ctx.stroke();
+
+            this.pathCreation(ctx, index, lineToIndex);
+        }
     }
 
     draw(ctx: CanvasRenderingContext2D): void {
         for (let i = 0; i < this.numberOfStars; i++) {
-            for (let j = 0; j < this.numberOfStars; j++) {
-                if (i !== j) {
-                    ctx.beginPath();
-                    ctx.moveTo(
-                        this.starArray[i].x + this.starArray[i].width / 2,
-                        this.starArray[i].y + this.starArray[i].height / 2
-                    );
-                    ctx.lineTo(
-                        this.starArray[j].x + this.starArray[j].width / 2,
-                        this.starArray[j].y + this.starArray[j].height / 2
-                    );
-                    ctx.strokeStyle = `rgba(254, 255, 224, ${Math.min(
-                        this.starArray[i].alpha,
-                        this.starArray[j].alpha
-                    )})`;
-                    ctx.stroke();
-                }
-            }
+            let lineToIndex = i;
+            this.pathCreation(ctx, i, lineToIndex);
         }
     }
 
