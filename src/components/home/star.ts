@@ -13,7 +13,8 @@ export default class Star {
         public width: number,
         public height: number,
         public alpha: number,
-        public star: HTMLImageElement
+        public star: HTMLImageElement,
+        public inConstellation: boolean
     ) {
         this.x = x;
         this.y = y;
@@ -23,7 +24,8 @@ export default class Star {
         this.alpha = alpha;
         this.star = star;
         this.color = "#FEFFE0";
-        this.changeAlpha = getRandomBias(0.0003, 0.0008, 0.001, 1);
+        this.changeAlpha = getRandomBias(0.0001, 0.0004, 0.001, 1);
+        this.inConstellation = inConstellation;
     }
 
     draw(ctx: CanvasRenderingContext2D): void {
@@ -32,26 +34,28 @@ export default class Star {
     }
 
     update(ctx: CanvasRenderingContext2D): void {
-        if (
-            this.x - this.width > ctx.canvas.width ||
-            this.x + this.width * this.scale < 0 ||
-            this.y - this.height * this.scale > ctx.canvas.height ||
-            this.y + this.height * this.scale < 0
-        ) {
-            this.x = getRandomBias(
-                this.width,
-                ctx.canvas.width - this.width,
-                ctx.canvas.width - ctx.canvas.width / 4,
-                0.7
-            );
-            this.y = getRandomBias(
-                this.height,
-                ctx.canvas.height - this.height,
-                ctx.canvas.height / 2,
-                1
-            );
-            this.alpha = 0.0001;
-            this.changeAlpha = Math.abs(this.changeAlpha);
+        if (!this.inConstellation) {
+            if (
+                this.x - this.width > ctx.canvas.width ||
+                this.x + this.width * this.scale < 0 ||
+                this.y - this.height * this.scale > ctx.canvas.height ||
+                this.y + this.height * this.scale < 0
+            ) {
+                this.x = getRandomBias(
+                    this.width,
+                    ctx.canvas.width - this.width,
+                    ctx.canvas.width - ctx.canvas.width / 4,
+                    0.7
+                );
+                this.y = getRandomBias(
+                    this.height,
+                    ctx.canvas.height - this.height,
+                    ctx.canvas.height / 2,
+                    1
+                );
+                this.alpha = 0.0001;
+                this.changeAlpha = Math.abs(this.changeAlpha);
+            }
         }
 
         if (this.alpha >= 0.6) {
