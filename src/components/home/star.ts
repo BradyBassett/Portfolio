@@ -24,7 +24,7 @@ export default class Star {
         this.alpha = alpha;
         this.star = star;
         this.color = "#FEFFE0";
-        this.changeAlpha = getRandomBias(0.0001, 0.0004, 0.001, 1);
+        this.changeAlpha = getRandomBias(0.00005, 0.0004, 0.0007, 1);
         this.inConstellation = inConstellation;
     }
 
