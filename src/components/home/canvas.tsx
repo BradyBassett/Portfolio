@@ -39,8 +39,8 @@ const Canvas: React.FC<{ className: string }> = ({ className }) => {
                     0.001,
                     0.75
                 );
-                let velocityX = getRandomBias(0.01, 0.1, 0.05, 1);
-                let velocityY = getRandomBias(0.01, 0.1, 0.05, 1);
+                let velocityX = getRandomBias(0.0001, 0.1, 0.001, 1);
+                let velocityY = getRandomBias(0.0001, 0.1, 0.001, 1);
                 if (velocityVariation > 0.25 && velocityVariation < 0.5) {
                     velocityX *= -1;
                 } else if (
