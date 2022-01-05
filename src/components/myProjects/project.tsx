@@ -20,7 +20,9 @@ const Project: React.FC<{ projectData: ProjectsI }> = ({ projectData }) => {
             </div>
             <div className="mt-6">
                 <h2 className="text-gray-300 text-lg">{title}</h2>
-                <p className="text-gray-400 lg:mr-10">{description}</p>
+                <p className="text-gray-400 text-xs 2xl:text-sm lg:mr-10">
+                    {description}
+                </p>
                 <ul className="absolute flex bottom-5 text-xs text-green-600">
                     {technologies.map((technology, index) => {
                         return (
