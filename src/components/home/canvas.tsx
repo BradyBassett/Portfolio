@@ -19,7 +19,7 @@ const Canvas: React.FC<{ className: string }> = ({ className }) => {
         const ctx = canvas.getContext("2d")!;
         const starsArray: Star[] = [];
         const constellationArray: Constellation[] = [];
-        const numberOfStars = Math.floor((canvas.height * canvas.width) / 2500);
+        const numberOfStars = Math.floor((canvas.height * canvas.width) / 3500);
         let numberOfConstellations: 3 | 5;
         if (canvas.width < 1024) {
             numberOfConstellations = 3;
