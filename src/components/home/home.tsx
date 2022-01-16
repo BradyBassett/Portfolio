@@ -16,7 +16,7 @@ const Home: React.FC = () => {
                 </div>
                 <p className="text-gray-400 text-center mx-1/5 sm:mx-1/4 lg:mx-3/10 xl:mx-5/16 2xl:mx-3/8">
                     I am a passionate Full Stack Software Engineer. I have
-                    expierence in developing Web and Desktop applications using
+                    experience in developing Web and Desktop applications using
                     a mix of React, Node.js, Java and much more!
                 </p>
             </section>
