@@ -33,7 +33,7 @@ export const socialIcons: { icon: JSX.Element; url: string }[] = [
     },
     {
         icon: <FaTwitter />,
-        url: "https://twitter.com/BradyBassett_",
+        url: "https://twitter.com/BradyBassett",
     },
     {
         icon: <FaInstagram />,
