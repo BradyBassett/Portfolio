@@ -19,10 +19,10 @@ const Canvas: React.FC<{ className: string }> = ({ className }) => {
         const ctx = canvas.getContext("2d")!;
         const starsArray: Star[] = [];
         const constellationArray: Constellation[] = [];
-        const numberOfStars = Math.floor((canvas.height * canvas.width) / 3500);
-        let numberOfConstellations: 3 | 5;
-        if (canvas.width < 1024) {
-            numberOfConstellations = 3;
+        const numberOfStars = Math.floor((canvas.height * canvas.width) / 5500);
+        let numberOfConstellations: 2 | 5;
+        if (canvas.width < 768) {
+            numberOfConstellations = 2;
         } else {
             numberOfConstellations = 5;
         }
@@ -39,8 +39,15 @@ const Canvas: React.FC<{ className: string }> = ({ className }) => {
                     0.001,
                     0.75
                 );
-                let velocityX = getRandomBias(0.0001, 0.1, 0.001, 1);
-                let velocityY = getRandomBias(0.0001, 0.1, 0.001, 1);
+                let velocityX: number;
+                let velocityY: number;
+                if (canvas.width < 768) {
+                    velocityX = getRandomBias(0.001, 0.5, 0.01, 1);
+                    velocityY = getRandomBias(0.001, 0.5, 0.01, 1);
+                } else {
+                    velocityX = getRandomBias(0.0001, 0.1, 0.001, 1);
+                    velocityY = getRandomBias(0.0001, 0.1, 0.001, 1);
+                }
                 if (velocityVariation > 0.25 && velocityVariation < 0.5) {
                     velocityX *= -1;
                 } else if (
@@ -104,7 +111,7 @@ const Canvas: React.FC<{ className: string }> = ({ className }) => {
 
         const newConstellationStars = (parent: Constellation): void => {
             for (let i = 0; i < parent.numberOfStars; i++) {
-                parent.starArray.push(parent.createNewStar(star));
+                parent.starArray.push(parent.createNewStar(star, ctx));
             }
         };
 
@@ -115,7 +122,7 @@ const Canvas: React.FC<{ className: string }> = ({ className }) => {
             }
         };
 
-        const render = () => {
+        const render = (): void => {
             animationFrameID = window.requestAnimationFrame(render);
             ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
             for (let i = 0; i < starsArray.length; i++) {

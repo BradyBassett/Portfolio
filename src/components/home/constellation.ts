@@ -1,5 +1,6 @@
 import Star from "./star";
 import { getRandomBias } from "../../utils/utils";
+import { createTextChangeRange } from "typescript";
 
 export default class Constellation {
     public starArray: Star[];
@@ -18,20 +19,19 @@ export default class Constellation {
         this.starArray = [];
     }
 
-    createNewStar(star: HTMLImageElement): Star {
+    createNewStar(star: HTMLImageElement, ctx: CanvasRenderingContext2D): Star {
         let scale = getRandomBias(0.01, 0.6, 0.3, 1);
         let width = Math.round(star.width * scale);
         let height = Math.round(star.height * scale);
         let velocityVariation = getRandomBias(0.001, 0.9999, 0.001, 0.75);
-        let velocityX = getRandomBias(0.0001, 0.1, 0.001, 1);
-        let velocityY = getRandomBias(0.0001, 0.1, 0.001, 1);
-        if (velocityVariation > 0.25 && velocityVariation < 0.5) {
-            velocityX *= -1;
-        } else if (velocityVariation > 0.25 && velocityVariation < 0.5) {
-            velocityY *= -1;
+        let velocityX: number;
+        let velocityY: number;
+        if (ctx.canvas.width < 768) {
+            velocityX = getRandomBias(0.001, 0.5, 0.01, 1);
+            velocityY = getRandomBias(0.001, 0.5, 0.01, 1);
         } else {
-            velocityX *= -1;
-            velocityY *= -1;
+            velocityX = getRandomBias(0.0001, 0.1, 0.001, 1);
+            velocityY = getRandomBias(0.0001, 0.1, 0.001, 1);
         }
         let x = getRandomBias(this.x1, this.x2, (this.x1 + this.x2) / 2, 1);
         let y = getRandomBias(this.y1, this.y2, (this.y1 + this.y2) / 2, 1);
